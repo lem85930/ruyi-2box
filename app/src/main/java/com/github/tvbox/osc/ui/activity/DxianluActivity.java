@@ -24,7 +24,6 @@ import com.lzy.okgo.model.Response;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.orhanobut.hawk.Hawk;
 
-import android.widget.Toast;//引用调试弹窗提示类
 
 /**
  * @茶茶QQ205888578
@@ -97,8 +96,8 @@ public class DxianluActivity extends BaseActivity {
                     @Override
                     public void onSuccess(Response<String> response) {
                         if (ToolUtils.iniData2(response, mContext)) {
-                            String string = response.body();
-                            DxianluBean noticeData = new Gson().fromJson(string, DxianluBean.class);
+                            String decryptedResponse = BaseR.decry_R2(response.body());
+                            DxianluBean noticeData = new Gson().fromJson(decryptedResponse, DxianluBean.class);
                             if (noticeData != null && noticeData.storeHouse.size() > 0) {
                                 runOnUiThread(new Runnable() {
                                     @Override
@@ -111,10 +110,10 @@ public class DxianluActivity extends BaseActivity {
                                     }
                                 });
 
-                                //String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
-                                //if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
-                                //    ToolUtils.HomeDialog(mContext, lastSourceName);
-                               // }
+                                String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
+                                if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
+                                    ToolUtils.HomeDialog(mContext, lastSourceName);
+                                }
                             }
                         }
                     }
@@ -129,7 +128,6 @@ public class DxianluActivity extends BaseActivity {
                     public void onError(Response<String> response) {
                         // 请求失败的处理逻辑
                         // 可以在这里进行提示或其他操作
-                        Toast.makeText(mContext, "获取多线接口失败", Toast.LENGTH_LONG).show();
                         super.onError(response);
                     }
                 });
