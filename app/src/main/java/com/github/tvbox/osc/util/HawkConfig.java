@@ -19,7 +19,7 @@ public class HawkConfig {
     public static String Your_app_id = ""; //TalkingData统计id  AndroidManifest.xml里面的也需要改
     public static String Your_channel_id = ""; //渠道随意
     public static String zb_vpn = "0"; //是否开启抓包 0开启 1关闭
-    public static final String BASE_URL_ENC = "";//域名无用
+    public static final String BASE_URL_ENC = "aHR0cDovLzE5Mi4xNjguMC4xMDA6OTI=";//域名无用
     public static String MMM_MMM = new String(Base64.decode(HawkConfig.BASE_URL_ENC.getBytes(), Base64.DEFAULT));
     public static String API_KEY = "THYkQmzt4MhzcJKQiERSFfChNJBR5rhP"; //接口密钥
     public static final String SOURCES_FOR_SEARCH = "checked_sources_for_search";//搜索
