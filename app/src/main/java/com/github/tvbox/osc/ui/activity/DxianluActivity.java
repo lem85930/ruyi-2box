@@ -96,8 +96,8 @@ public class DxianluActivity extends BaseActivity {
                     @Override
                     public void onSuccess(Response<String> response) {
                         if (ToolUtils.iniData2(response, mContext)) {
-                            String decryptedResponse = BaseR.decry_R2(response.body());
-                            DxianluBean noticeData = new Gson().fromJson(decryptedResponse, DxianluBean.class);
+                            String string = response.body();//无需解密
+                            DxianluBean noticeData = new Gson().fromJson(string, DxianluBean.class);
                             if (noticeData != null && noticeData.storeHouse.size() > 0) {
                                 runOnUiThread(new Runnable() {
                                     @Override
