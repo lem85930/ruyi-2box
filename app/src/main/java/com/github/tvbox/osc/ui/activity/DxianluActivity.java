@@ -116,7 +116,7 @@ public class DxianluActivity extends BaseActivity {
                                // if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
                                //     ToolUtils.HomeDialog(mContext, lastSourceName);
                                // }
-                            }
+                            //}
                         }
                     }
                          return null;
