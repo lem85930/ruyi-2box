@@ -9,7 +9,7 @@ public class DxianluBean {
     /**
      "storeHouse":
      */
-    @SerializedName("storeHouse")
+    @SerializedName("urls")
     public List<MsgDTO> storeHouse;
 
     public static class MsgDTO {
@@ -19,9 +19,9 @@ public class DxianluBean {
 
          */
 
-        @SerializedName("sourceName")
+        @SerializedName("name")
         public String sourceName;
-        @SerializedName("sourceUrl")
+        @SerializedName("url")
         public String sourceUrl;
     }
 }
