@@ -114,10 +114,11 @@ public class DxianluActivity extends BaseActivity {
                                 String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
                                 if (ToolUtils.getIsEmpty(lastSourceName)) {//不为空
                                     //ToolUtils.HomeDialog(mContext, lastSourceName);
-                                }else{
-                                    Toast.makeText(mContext, "多线路为空", Toast.LENGTH_LONG).show();
                                 }
+                            }else{
+                                Toast.makeText(mContext, "多线路为空", Toast.LENGTH_LONG).show();
                             }
+                            
                         }
                     }
 
