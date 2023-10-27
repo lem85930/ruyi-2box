@@ -111,10 +111,10 @@ public class DxianluActivity extends BaseActivity {
                                     }
                                 });
 
-                                String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
-                                if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
-                                    ToolUtils.HomeDialog(mContext, lastSourceName);
-                                }
+                                //String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
+                                //if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
+                                //    ToolUtils.HomeDialog(mContext, lastSourceName);
+                               // }
                             }
                         }
                     }
