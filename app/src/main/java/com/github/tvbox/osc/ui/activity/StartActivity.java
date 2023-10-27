@@ -131,10 +131,7 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-
-
-
-        DownloadUtil.get().download(HawkConfig.CONFIG_URL, "download", new DownloadUtil.OnDownloadListener() {
+        /*DownloadUtil.get().download(HawkConfig.CONFIG_URL, "download", new DownloadUtil.OnDownloadListener() {
             @Override
             public void onDownloadSuccess(String path) {
                 PropertiesUtils.load(path);
@@ -153,7 +150,11 @@ public class StartActivity extends AppCompatActivity {
             public void onDownloadFailed() {
 
             }
-        });
+        });*/
+        getSite();
+        getJieXi();
+        getAppIni();
+        getMyBanner();
 
     }
 //零熙QQ：1007713299
