@@ -24,6 +24,7 @@ import com.lzy.okgo.model.Response;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.orhanobut.hawk.Hawk;
 
+import android.widget.Toast;//引入提示
 
 /**
  * @茶茶QQ205888578
@@ -114,7 +115,9 @@ public class DxianluActivity extends BaseActivity {
                                 if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
                                     ToolUtils.HomeDialog(mContext, lastSourceName);
                                 }
-                            }
+                            }else{//
+								Toast.makeText(mContext, "多接口线路为空", Toast.LENGTH_LONG).show();
+							}
                         }
                     }
 
