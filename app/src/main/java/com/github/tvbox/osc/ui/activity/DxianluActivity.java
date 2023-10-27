@@ -119,7 +119,6 @@ public class DxianluActivity extends BaseActivity {
                             //}
                         }
                     }
-                         return null;
 
                     @Override
                     public String convertResponse(okhttp3.Response response) throws Throwable {
