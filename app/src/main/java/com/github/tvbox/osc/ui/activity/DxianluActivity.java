@@ -115,9 +115,9 @@ public class DxianluActivity extends BaseActivity {
                                 if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
                                     ToolUtils.HomeDialog(mContext, lastSourceName);
                                 }
-                            }else{//
-								Toast.makeText(mContext, "多接口线路为空", Toast.LENGTH_LONG).show();
-							}
+                            }else{
+				Toast.makeText(v.getContext(), "多接口线路为空", Toast.LENGTH_LONG).show();
+			    }
                         }
                     }
 
