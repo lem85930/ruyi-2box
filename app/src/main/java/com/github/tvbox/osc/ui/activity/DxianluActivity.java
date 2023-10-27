@@ -24,6 +24,7 @@ import com.lzy.okgo.model.Response;
 import com.github.tvbox.osc.util.HawkConfig;
 import com.orhanobut.hawk.Hawk;
 
+import android.widget.Toast;//引用调试弹窗提示类
 
 /**
  * @茶茶QQ205888578
@@ -96,6 +97,7 @@ public class DxianluActivity extends BaseActivity {
                     @Override
                     public void onSuccess(Response<String> response) {
                         if (ToolUtils.iniData2(response, mContext)) {
+                            Toast.makeText(mContext, "获取到多线路" + response.body(), Toast.LENGTH_LONG).show();
                             String decryptedResponse = BaseR.decry_R2(response.body());
                             DxianluBean noticeData = new Gson().fromJson(decryptedResponse, DxianluBean.class);
                             if (noticeData != null && noticeData.storeHouse.size() > 0) {
