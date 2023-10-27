@@ -4,7 +4,7 @@ android {
     compileSdkVersion 33
 
     defaultConfig {
-        applicationId 'com.tluo.cc'
+        applicationId 'com.zhuzi.ruyi'
         minSdkVersion 16
         targetSdkVersion 26
         versionCode 1
