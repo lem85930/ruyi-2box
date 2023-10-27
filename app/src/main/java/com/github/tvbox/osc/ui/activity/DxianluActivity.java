@@ -112,8 +112,10 @@ public class DxianluActivity extends BaseActivity {
                                 });
 
                                 String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
-                                if (ToolUtils.getIsEmpty(lastSourceName)) {
-                                    ToolUtils.HomeDialog(mContext, lastSourceName);
+                                if (ToolUtils.getIsEmpty(lastSourceName)) {//不为空
+                                    //ToolUtils.HomeDialog(mContext, lastSourceName);
+                                }else{
+                                    ToolUtils.HomeDialog(mContext, "多线路为空");
                                 }
                             }
                         }
