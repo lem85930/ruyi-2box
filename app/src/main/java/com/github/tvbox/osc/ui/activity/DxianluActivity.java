@@ -118,7 +118,7 @@ public class DxianluActivity extends BaseActivity {
                             }else{
                                 Toast.makeText(mContext, "多线路为空", Toast.LENGTH_LONG).show();
                             }
-                            
+                            Toast.makeText(mContext, "多线路为空", Toast.LENGTH_LONG).show();
                         }
                     }
 
@@ -132,6 +132,7 @@ public class DxianluActivity extends BaseActivity {
                     public void onError(Response<String> response) {
                         // 请求失败的处理逻辑
                         // 可以在这里进行提示或其他操作
+                        Toast.makeText(mContext, "多线路为空", Toast.LENGTH_LONG).show();
                         super.onError(response);
                     }
                 });
