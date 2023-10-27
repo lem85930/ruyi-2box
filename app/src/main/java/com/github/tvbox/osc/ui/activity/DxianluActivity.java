@@ -97,26 +97,25 @@ public class DxianluActivity extends BaseActivity {
                     @Override
                     public void onSuccess(Response<String> response) {
                         if (ToolUtils.iniData2(response, mContext)) {
-                            Toast.makeText(mContext, "获取到多线路" + response.body(), Toast.LENGTH_LONG).show();
-                            //String decryptedResponse = BaseR.decry_R2(response.body());
-                           // DxianluBean noticeData = new Gson().fromJson(decryptedResponse, DxianluBean.class);
-                            //if (noticeData != null && noticeData.storeHouse.size() > 0) {
-                                //runOnUiThread(new Runnable() {
-                                   // @Override
-                                   // public void run() {
-                                     //   DxianluAdapter dxianluAdapter = new DxianluAdapter(noticeData.storeHouse);
-                                     //   LinearLayoutManager layoutManager = new LinearLayoutManager(DxianluActivity.this);
-                                     //   layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
-                                     //   message_list.setLayoutManager(layoutManager);
-                                     //   message_list.setAdapter(dxianluAdapter);
-                                    //}
-                                //});
+                            String string = response.body();
+                            DxianluBean noticeData = new Gson().fromJson(string, DxianluBean.class);
+                            if (noticeData != null && noticeData.storeHouse.size() > 0) {
+                                runOnUiThread(new Runnable() {
+                                    @Override
+                                    public void run() {
+                                        DxianluAdapter dxianluAdapter = new DxianluAdapter(noticeData.storeHouse);
+                                        LinearLayoutManager layoutManager = new LinearLayoutManager(DxianluActivity.this);
+                                        layoutManager.setOrientation(LinearLayoutManager.VERTICAL);
+                                        message_list.setLayoutManager(layoutManager);
+                                        message_list.setAdapter(dxianluAdapter);
+                                    }
+                                });
 
-                               // String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
-                               // if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
-                               //     ToolUtils.HomeDialog(mContext, lastSourceName);
-                               // }
-                            //}
+                                String lastSourceName = noticeData.storeHouse.get(noticeData.storeHouse.size() - 1).sourceName;
+                                if (ToolUtils.getIsEmpty(lastSourceName) && isNotice) {
+                                    ToolUtils.HomeDialog(mContext, lastSourceName);
+                                }
+                            }
                         }
                     }
 
@@ -130,6 +129,7 @@ public class DxianluActivity extends BaseActivity {
                     public void onError(Response<String> response) {
                         // 请求失败的处理逻辑
                         // 可以在这里进行提示或其他操作
+                        Toast.makeText(mContext, "获取多线接口失败", Toast.LENGTH_LONG).show();
                         super.onError(response);
                     }
                 });
